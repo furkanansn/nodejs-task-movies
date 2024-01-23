@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+node_modules/
+dist/
+tmp/
+temp/
+.env.local
+tsconfig.tsbuildinfo
+.DS_STORE
+
+package-lock.json
+
+.yarn.lock

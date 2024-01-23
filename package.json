@@ -1,0 +1,52 @@
+{
+  "name": "movie_fa",
+  "version": "1.0.0",
+  "description": "Movie FA",
+  "private": true,
+  "author": "Furkan Aksoylu",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-flow": "^3.3.3",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^46.9.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.11",
+    "axios": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^4.0.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^7.0.1",
+    "http-status-codes": "^2.3.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.7.1",
+    "reflect-metadata": "^0.2.1",
+    "typeorm": "^0.3.19",
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
+  },
+  "scripts": {
+    "build:staging": "NODE_ENV=staging tsc -build",
+    "build:production": "NODE_ENV=production tsc -build",
+    "start:staging": "NODE_ENV=staging node dist/index.js",
+    "start:production": "NODE_ENV=staging node dist/index.js",
+    "start-dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "test": "jest --runInBand __tests__/e2e/",
+    "clean-dist": "tsc -build --clean && rm -rf dist",
+    "app-schema-log": "typeorm schema:log",
+    "version": "VERSION=$npm_package_version node version.js"
+  }
+}
